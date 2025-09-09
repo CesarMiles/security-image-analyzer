@@ -25,6 +25,7 @@ A containerized Python application that uses AWS Rekognition to detect faces in 
 ## Project Structure
 
 This project is structured modularly to promote separation of concerns and maintainability.
+
 security-image-analyzer/
 ├── app.py # Main application orchestrator
 ├── rekognition_helper.py # Module for AWS Rekognition interactions
@@ -60,19 +61,23 @@ This project implements several professional development practices:
 ### 1. Build the Docker Image
 ```bash
 docker build -t security-image-analyzer .
+```
 
 ### 2. Configure Environment
-Create a `.env` file in the project root (see `.env.example` for format):
 ```bash
+Create a `.env` file in the project root (see `.env.example` for format):
 # .env
 AWS_ACCESS_KEY_ID=your_access_key
 AWS_SECRET_ACCESS_KEY=your_secret_key
 AWS_DEFAULT_REGION=us-east-1
 S3_BUCKET_NAME=your-bucket-name
+```
 
-### 3. Run the Container
+ ### 3. Run the Container
+```bash
 docker run --rm -it \
   -v "$(pwd):/data" \
   --env-file .env \
   security-image-analyzer \
   python app.py /data/your-image.jpg
+```
