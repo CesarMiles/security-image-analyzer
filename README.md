@@ -25,7 +25,7 @@ A containerized Python application that uses AWS Rekognition to detect faces in 
 ## Project Structure
 
 This project is structured modularly to promote separation of concerns and maintainability.
-
+```bash
 security-image-analyzer/
 ├── app.py # Main application orchestrator
 ├── rekognition_helper.py # Module for AWS Rekognition interactions
@@ -35,6 +35,7 @@ security-image-analyzer/
 ├── .env # Environment configuration (gitignored)
 ├── .gitignore # Specifies intentionally untracked files
 └── README.md # This file
+```
 
 ## Security Considerations
 
