@@ -4,6 +4,7 @@ import logging
 from rekognition_helper import analyze_image
 from s3_helper import upload_to_s3
 
+
 # Configuration to log globally for the entire application
 logging.basicConfig(
     level=logging.INFO,
@@ -40,6 +41,6 @@ def main(image_path):
 if __name__ == '__main__':
     logger = logging.getLogger(__name__)
     if len(sys.argv) != 2:
-        print('Usage: python app.py <path_to_image.jpg>')
+        logger.info('Usage: python app.py <path_to_image.jpg>')
     else:
         main(sys.argv[1])
